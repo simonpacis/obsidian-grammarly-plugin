@@ -51,7 +51,7 @@ export default class MyPlugin extends Plugin {
 				/* Look for Grammarly-powered tooltip, and if found, remove element. */
 				const tooltip_observer = new MutationObserver(tooltip_callback);
 
-				function tooltip_callback (mutations) {
+				function tooltip_callback (mutations: MutationRecord[]) {
 					for(var i = 0; i < mutations.length; i++)
 					{
 						var mutation = mutations[i];
@@ -59,7 +59,7 @@ export default class MyPlugin extends Plugin {
 							{
 								for(var ii = 0; ii < mutation.addedNodes.length; ii++)
 								{
-									var node = mutation.addedNodes[ii];
+									var node = mutation.addedNodes[ii] as HTMLBodyElement;
 									if(node.innerText == "Grammarly-powered editor")
 										{
 											node.remove();
@@ -69,7 +69,9 @@ export default class MyPlugin extends Plugin {
 					}
 				}
 
-				tooltip_observer.observe(document.querySelector("body"), {childList: true});
+				var tooltip_observer_element = document.querySelector("body")!;
+
+				tooltip_observer.observe(tooltip_observer_element, {childList: true});
 
 			}
 		}
