@@ -4,7 +4,8 @@ This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](http
 
 ![Demo](https://user-images.githubusercontent.com/7118482/195243729-44cee9a0-3635-4eda-b012-5af36a5c0f96.gif)
 
-**NOTE**: This plugin is a work in progress. It will be submitted to "Community Plugins" at a later time.
+**NOTE**: This plugin is a work in progress.
+It will be submitted to "Community Plugins" at a later time.
 
 ## Installation 
 
@@ -17,10 +18,13 @@ Quick starting guide for installing the plugin:
 
 There are two ways to use this plugin.
 
-1. Click on the Grammarly logo in the left ribbon.
-2. Open the command palette and run the "Enable Grammarly" command.
+1.
+Click on the Grammarly logo in the left ribbon.
+2.
+Open the command palette and run the "Enable Grammarly" command.
 
-Grammarly will now be enabled for the remainder of the session. At the moment you (generally) have to quit Obsidian to get rid of it.
+Grammarly will now be enabled for the remainder of the session.
+At the moment you (generally) have to quit Obsidian to get rid of it.
 
 ## About
 This plugin is pretty simple.
@@ -37,7 +41,7 @@ Here are the planned features before submission to "Community Plugins" will be m
 - [ ] Style customizations
 - [ ] Custom settings
 - [ ] Ability to disable Grammarly
-- [ ] Hide/move "Grammarly-powered editor" tooltip
+- [X] Hide/move "Grammarly-powered editor" tooltip
 - [ ] Test on Windows
 - [ ] Test on iOS
 - [ ] Test on Android

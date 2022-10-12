@@ -47,6 +47,30 @@ export default class MyPlugin extends Plugin {
 
 			if (plugin) {
 				plugin.initialize(editorView);
+
+				/* Look for Grammarly-powered tooltip, and if found, remove element. */
+				const tooltip_observer = new MutationObserver(tooltip_callback);
+
+				function tooltip_callback (mutations) {
+					for(var i = 0; i < mutations.length; i++)
+					{
+						var mutation = mutations[i];
+						if(mutation.addedNodes.length > 0)
+							{
+								for(var ii = 0; ii < mutation.addedNodes.length; ii++)
+								{
+									var node = mutation.addedNodes[ii];
+									if(node.innerText == "Grammarly-powered editor")
+										{
+											node.remove();
+										}
+								}
+							}
+					}
+				}
+
+				tooltip_observer.observe(document.querySelector("body"), {childList: true});
+
 			}
 		}
 	}
