@@ -18,10 +18,8 @@ Quick starting guide for installing the plugin:
 
 There are two ways to use this plugin.
 
-1.
-Click on the Grammarly logo in the left ribbon.
-2.
-Open the command palette and run the "Enable Grammarly" command.
+1.\ Click on the Grammarly logo in the left ribbon.
+2.\ Open the command palette and run the "Enable Grammarly" command.
 
 Grammarly will now be enabled for the remainder of the session.
 At the moment you (generally) have to quit Obsidian to get rid of it.
