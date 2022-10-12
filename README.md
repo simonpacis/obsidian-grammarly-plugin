@@ -2,6 +2,8 @@
 
 This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](https://grammarly.com) support directly in your editor.
 
+![Demo](https://user-images.githubusercontent.com/7118482/195243729-44cee9a0-3635-4eda-b012-5af36a5c0f96.gif)
+
 **NOTE**: This plugin is a work in progress. It will be submitted to "Community Plugins" at a later time.
 
 ## Installation 
