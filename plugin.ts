@@ -25,11 +25,11 @@ const initializeGrammarly = (view: EditorView) => {
 		// Not really sure how to style the shadow root in another way. This fixes positioning errors that for some reason occur with Grammarly SDK in Obsidian.
 		style.innerHTML = `
 
-
+/*
 			article 
 			{
 				left: 320px !important;
-			}
+			}*/
 
 			.nvqxur1>:nth-child(2):not(article)
 			{
