@@ -7,7 +7,7 @@ import {
 import * as Grammarly from '@grammarly/editor-sdk'
 
 const initialize = Grammarly.init('client_SZRuwBMe5opCznxqMQCG3q')
-const initializeGrammarly = (view) => {
+const initializeGrammarly = (view: EditorView) => {
 	initialize.then((grammarly) => {
 		grammarly.addPlugin(
 			view.contentDOM,
@@ -19,8 +19,8 @@ const initializeGrammarly = (view) => {
 			view.scrollDOM
 		);
 
-		host = document.querySelector("grammarly-editor-plugin");
-		style = document.createElement('style');
+		var host = document.querySelector("grammarly-editor-plugin");
+		var style = document.createElement('style');
 
 		// Not really sure how to style the shadow root in another way. This fixes positioning errors that for some reason occur with Grammarly SDK in Obsidian.
 		style.innerHTML = `
@@ -46,7 +46,7 @@ const initializeGrammarly = (view) => {
 			}
 		`;
 
-		host.shadowRoot.appendChild(style);
+		host?.shadowRoot?.appendChild(style);
 	})
 }
 class GrammarlyPlugin implements PluginValue {

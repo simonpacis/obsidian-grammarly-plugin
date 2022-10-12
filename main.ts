@@ -2,7 +2,7 @@ import { Extension } from '@codemirror/state';
 
 import { addIcon, App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 import * as Grammarly from '@grammarly/editor-sdk'
-import { grammarlyPlugin, initialize, initializeGrammarly } from './plugin'
+import { grammarlyPlugin } from './plugin'
 
 // Remember to rename these classes and interfaces!
 
@@ -18,13 +18,13 @@ export default class MyPlugin extends Plugin {
 			this.enableGrammarly();
 		});
 
-	this.addCommand({
-		id: "enable-grammarly",
-		name: "Enable Grammarly",
-		editorCallback: (editor, view) => {
-			this.enableGrammarly();
-		},
-	});
+		this.addCommand({
+			id: "enable-grammarly",
+			name: "Enable Grammarly",
+			editorCallback: (editor, view) => {
+				this.enableGrammarly();
+			},
+		});
 		if (!this.ext) {
 			this.ext = grammarlyPlugin;
 			this.extArray = [this.ext];
@@ -38,15 +38,16 @@ export default class MyPlugin extends Plugin {
 	}
 
 	enableGrammarly() {
-			// @ts-expect-error, not typed
-			new Notice('Grammarly has been enabled.');
-			const view = this.app.workspace.activeLeaf.view;
-			const editorView = view.editor.cm as EditorView;
+		new Notice('Grammarly has been enabled.');
+		const view = this?.app?.workspace?.activeLeaf?.view;
+		if (view != null) {
+			const editorView = (view as any).editor.cm;
 
 			const plugin = editorView.plugin(grammarlyPlugin);
 
 			if (plugin) {
 				plugin.initialize(editorView);
 			}
+		}
 	}
 }
