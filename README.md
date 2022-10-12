@@ -31,8 +31,9 @@ Here are the planned features:
 
 | Feature                                                                         | Completed |
 |---------------------------------------------------------------------------------|-----------|
-| Add support for logging in to your own Grammarly account (for premium features: | No.
-      |
+| Add support for logging in to your own Grammarly account (for premium features: | No        |
 | Add customizations for Grammarly button placement etc.
-                         | No.
-      |
+                         | No        |
+
+
+
