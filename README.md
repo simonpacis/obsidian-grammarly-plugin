@@ -9,9 +9,9 @@ This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](http
 ## Installation 
 
 Quick starting guide for installing the plugin:
-- Download the latest release here from Github
-- Put the extracted directory in the .obsidian/plugins folder in your Vault (it might be a hidden folder)
-- Open Obsidian, go to "Community Plugins" and enable "Obsidian Grammarly Plugin".
+- Download main.js, styles.css, and manifest.json from the latest release.
+- Put the files in a .obsidian/plugins/obsidian-grammarly-plugin folder in your Vault (.obsidian is probably hidden)
+- Open Obsidian, go to "Community Plugins" and enable "Grammarly Plugin".
 
 ## Usage
 
