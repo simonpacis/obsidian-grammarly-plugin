@@ -544,12 +544,11 @@ wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 104) / 208)
 exe 'vert 2resize ' . ((&columns * 176 + 104) / 208)
 tabnext 1
-badd +40 README.md
-badd +31 main.ts
-badd +28 plugin.ts
-badd +1 package.json
+badd +1 versions.json
 badd +4 manifest.json
-badd +0 versions.json
+badd +1 README.md
+badd +25 main.ts
+badd +33 plugin.ts
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
