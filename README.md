@@ -27,11 +27,10 @@ You also get underlines and the typical in-place substitutions.
 ## Roadmap
 Obsidian Grammarly Plugin is far from done.
 This is more of a proof-of-concept version at this stage.
-Here are the planned features:
+Here are the planned features before submission will be made.
 
-| Feature                                                                         | Completed |
-|---------------------------------------------------------------------------------|-----------|
-| Add support for logging in to your own Grammarly account (for premium features: | No.       |
-| Add customizations for Grammarly button placement etc.                          | No.       |
-
-
+### 1.0.0
+- [ ] Support for logging in to your own Grammarly account (for premium features)
+- [ ] Style customizations
+- [ ] Custom settings
+- [ ] Proper fix for incorrect placement of Grammarly popups
