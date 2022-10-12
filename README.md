@@ -41,7 +41,7 @@ Here are the planned features before submission to "Community Plugins" will be m
 - [ ] Style customizations
 - [ ] Custom settings
 - [ ] Ability to disable Grammarly
-- [X] Hide/move "Grammarly-powered editor" tooltip
+- [ ] Hide/move "Grammarly-powered editor" tooltip
 - [ ] Test on Windows
 - [ ] Test on iOS
 - [ ] Test on Android
