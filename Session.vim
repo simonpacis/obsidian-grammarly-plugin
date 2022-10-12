@@ -211,7 +211,7 @@ endif
 set shortmess=aoO
 argglobal
 %argdel
-edit plugin.ts
+edit versions.json
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -404,7 +404,7 @@ setlocal nowrap
 setlocal wrapmargin=0
 wincmd w
 argglobal
-balt main.ts
+balt manifest.json
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -421,8 +421,8 @@ setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:*\ -,mO:*\ \ ,exO:*/,s1:/*,mb:*,ex:*/,://
-setlocal commentstring=//%s
+setlocal comments=
+setlocal commentstring=
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -439,8 +439,8 @@ setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
 setlocal noexpandtab
-if &filetype != 'typescript'
-setlocal filetype=typescript
+if &filetype != 'json'
+setlocal filetype=json
 endif
 setlocal fixendofline
 setlocal foldcolumn=0
@@ -453,8 +453,8 @@ setlocal foldmethod=manual
 setlocal foldminlines=1
 setlocal foldnestmax=20
 setlocal foldtext=foldtext()
-setlocal formatexpr=Fixedgq(v:lnum,v:count)
-setlocal formatoptions=croql
+setlocal formatexpr=
+setlocal formatoptions=cq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal formatprg=
 setlocal grepprg=
@@ -462,10 +462,10 @@ setlocal iminsert=0
 setlocal imsearch=-1
 setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=GetTypescriptIndent()
-setlocal indentkeys=0{,0},0),0],0,,!^F,o,O,e
+setlocal indentexpr=GetJSONIndent(v:lnum)
+setlocal indentkeys=0{,0},0),0[,0],!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$,#
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
@@ -506,11 +506,11 @@ setlocal spellfile=
 setlocal spelllang=en
 setlocal spelloptions=
 setlocal statusline=%!airline#statusline(2)
-setlocal suffixesadd=.ts,.d.ts,.tsx,.js,.jsx,.cjs,.mjs
+setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'typescript'
-setlocal syntax=typescript
+if &syntax != 'json'
+setlocal syntax=json
 endif
 setlocal tabstop=2
 setlocal tagcase=
@@ -533,12 +533,12 @@ setlocal wrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 28 - ((12 * winheight(0) + 28) / 57)
+let s:l = 2 - ((1 * winheight(0) + 28) / 57)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 28
-normal! 02|
+keepjumps 2
+normal! 08|
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 104) / 208)
@@ -546,7 +546,10 @@ exe 'vert 2resize ' . ((&columns * 176 + 104) / 208)
 tabnext 1
 badd +40 README.md
 badd +31 main.ts
-badd +0 plugin.ts
+badd +28 plugin.ts
+badd +1 package.json
+badd +4 manifest.json
+badd +0 versions.json
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
 endif
