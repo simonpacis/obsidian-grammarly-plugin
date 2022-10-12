@@ -5,4 +5,11 @@ available in the app when your plugin is enabled.
 
 If your plugin does not need CSS, delete this file.
 
-*/
+ */
+
+grammarly-editor-plugin {
+	--grammarly-button-position-bottom: 24px;
+	--grammarly-button-position-left: 24px;
+	min-height: 100vh !important;
+}
+
