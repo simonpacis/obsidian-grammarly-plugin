@@ -11,6 +11,8 @@ It will be submitted to "Community Plugins" at a later time.
 
 Quick starting guide for installing the plugin:
 - Download obsidian-grammarly-plugin.zip from the latest release.
+	- Go to: https://github.com/simonpacis/obsidian-grammarly-plugin/releases
+	- Go to the latest release, click "Assets" and download the zip-file from here.
 - Extract the file in a .obsidian/plugins folder in your Vault (.obsidian is probably hidden)
 - Open Obsidian, go to "Community Plugins" and enable "Grammarly Plugin".
 
