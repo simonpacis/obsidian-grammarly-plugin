@@ -47,4 +47,5 @@ Here are the planned features before submission to "Community Plugins" will be m
 - [ ] Test on Android
 
 ## Known bugs
-- [ ] Grammarly fails in files with embedded PDF's.
+- [ ] Grammarly fails in files with embedded PDF's (see issue [#2](https://github.com/simonpacis/obsidian-grammarly-plugin/issues/2))
+
