@@ -46,3 +46,5 @@ Here are the planned features before submission to "Community Plugins" will be m
 - [ ] Test on iOS
 - [ ] Test on Android
 
+## Known bugs
+- [ ] Grammarly fails in files with embedded PDF's.
