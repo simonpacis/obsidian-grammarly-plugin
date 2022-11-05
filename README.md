@@ -9,6 +9,8 @@ It will be submitted to "Community Plugins" at a later time.
 
 ## Installation 
 
+**Do not clone the repo or download it as zip. This is not how this plug-in is installed.**
+
 Quick starting guide for installing the plugin:
 - Download obsidian-grammarly-plugin.zip from the latest release.
 	- Go to: https://github.com/simonpacis/obsidian-grammarly-plugin/releases
