@@ -33,6 +33,16 @@ This plugin is pretty simple.
 It includes the Grammarly Editor SDK so that you get a Grammarly button in the lower left corner of your editor window.
 You also get underlines and the typical in-place substitutions that Grammarly provides.
 
+## Developing the plugin
+If you're interested in further developing the plugin, you are more than welcome to do so and submit PR's.
+
+Quick-start:
+- Clone the repo
+- Run ```npm install```
+- Run ```npm run dev``` to generate main.js.
+
+The plugin is based on the following unofficial developer docs: [https://marcus.se.net/obsidian-plugin-docs/getting-started/create-your-first-plugin](https://marcus.se.net/obsidian-plugin-docs/getting-started/create-your-first-plugin)
+
 ## Roadmap
 Obsidian Grammarly Plugin is far from done.
 This is more of a proof-of-concept version at this stage.
