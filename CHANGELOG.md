@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.0
+Added settings to define the offset of the Grammarly popover.
+
 ## 0.1.1
 Removed "Grammarly-powered editor" tooltip.
 
