@@ -28,6 +28,13 @@ There are two ways to use this plugin.
 Grammarly will now be enabled for the remainder of the session.
 At the moment you (generally) have to quit Obsidian to get rid of it.
 
+### Offset
+Some themes change the way the Grammarly popover is positioned, and therefore it might be far off from where it is supposed to be. In the settings for the plugin it is possible to offset the popover (left and top) in pixels.
+
+E.g. for the default Obsidian theme I have found a left offset of "320" and a top offset of "100" to be helpful.
+
+Please note that the offset doesn't live-change. It is only applied the first time you "Enable Grammarly". You may have to restart Obsidian in between offset changes.
+
 ## About
 This plugin is pretty simple.
 It includes the Grammarly Editor SDK so that you get a Grammarly button in the lower left corner of your editor window.
