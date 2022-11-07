@@ -1,13 +1,15 @@
 import {
-  ViewUpdate,
-  PluginValue,
-  EditorView,
-  ViewPlugin,
+	ViewUpdate,
+	PluginValue,
+	EditorView,
+	ViewPlugin,
 } from "@codemirror/view";
-import * as Grammarly from '@grammarly/editor-sdk'
+import * as Grammarly from '@grammarly/editor-sdk';
+import {ObsidianGrammarlyPluginSettings} from './main';
 
 const initialize = Grammarly.init('client_SZRuwBMe5opCznxqMQCG3q')
-const initializeGrammarly = (view: EditorView) => {
+const initializeGrammarly = (view: EditorView, settings: ObsidianGrammarlyPluginSettings) => {
+	console.log(settings);
 	initialize.then((grammarly) => {
 		grammarly.addPlugin(
 			view.contentDOM,
@@ -23,40 +25,61 @@ const initializeGrammarly = (view: EditorView) => {
 		var style = document.createElement('style');
 
 		// Not really sure how to style the shadow root in another way. This fixes positioning errors that for some reason occur with Grammarly SDK in Obsidian.
-		style.innerHTML = `
 
-			.nvqxur1>:nth-child(2):not(article)
-			{
-				left: 80px !important;
-			}
 
-			div:has(div[aria-label="Grammarly Settings"])
-			{
-				left: 80px !important;
-			}
+		var inner_html  = `
+		.nvqxur1>:nth-child(2):not(article)
+		{
+			left: 80px !important;
+		}
 
-			div[role="tooltip"] {
-				left: 80px !important;
-			}
+		div:has(div[aria-label="Grammarly Settings"])
+		{
+			left: 80px !important;
+		}
+
+		div[role="tooltip"] {
+			left: 80px !important;
+		}
 		`;
 
-		host?.shadowRoot?.appendChild(style);
+		if(settings.left_offset != "0")
+			{
+				inner_html = inner_html + `
+				article 
+				{
+					left: ` + settings.left_offset + `px !important;
+				}`
+			}
+
+		if(settings.top_offset != "0")
+			{
+				inner_html = inner_html + `
+				article 
+				{
+					top: ` + settings.top_offset + `px !important;
+				}`
+			}
+
+			style.innerHTML = inner_html;
+
+			host?.shadowRoot?.appendChild(style);
 	})
 }
 class GrammarlyPlugin implements PluginValue {
-  constructor(view: EditorView) {
-  }
-
-  update(update: ViewUpdate) {
-  }
-
-  destroy() {
-  }
-
-	initialize(view: EditorView){
-		return initializeGrammarly(view);
+	constructor(view: EditorView) {
 	}
-		
+
+	update(update: ViewUpdate) {
+	}
+
+	destroy() {
+	}
+
+	initialize(view: EditorView, settings: ObsidianGrammarlyPluginSettings){
+		return initializeGrammarly(view, settings);
+	}
+
 
 }
 
