@@ -7,9 +7,8 @@ import {
 import * as Grammarly from '@grammarly/editor-sdk';
 import {ObsidianGrammarlyPluginSettings} from './main';
 
-const initialize = Grammarly.init('client_SZRuwBMe5opCznxqMQCG3q')
 const initializeGrammarly = (view: EditorView, settings: ObsidianGrammarlyPluginSettings) => {
-	console.log(settings);
+const initialize = Grammarly.init(settings.client_id);
 	initialize.then((grammarly) => {
 		grammarly.addPlugin(
 			view.contentDOM,
@@ -46,7 +45,7 @@ const initializeGrammarly = (view: EditorView, settings: ObsidianGrammarlyPlugin
 		if(settings.left_offset != "0")
 			{
 				inner_html = inner_html + `
-				article 
+				.nvqxur1 div[role=dialog]
 				{
 					left: ` + settings.left_offset + `px !important;
 				}`
@@ -55,7 +54,7 @@ const initializeGrammarly = (view: EditorView, settings: ObsidianGrammarlyPlugin
 		if(settings.top_offset != "0")
 			{
 				inner_html = inner_html + `
-				article 
+				.nvqxur1 div[role=dialog]
 				{
 					top: ` + settings.top_offset + `px !important;
 				}`

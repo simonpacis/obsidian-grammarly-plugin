@@ -21,3 +21,10 @@ data.json
 
 # Exclude macOS Finder (System Explorer) View States
 .DS_Store
+
+*.swp
+
+.eslintrc
+.editorconfig
+.eslintignore
+.npmrc

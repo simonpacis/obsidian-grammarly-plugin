@@ -28,7 +28,7 @@
     "@codemirror/view": "0.19.47"
   },
 	"dependencies": {
-		"@grammarly/editor-sdk": "2.0.2",
+		"@grammarly/editor-sdk": "2.2.0",
 		"path": "^0.12.7"
 	}
 }

@@ -11,11 +11,15 @@ import { grammarlyPlugin } from './plugin'
 export interface ObsidianGrammarlyPluginSettings {
 	left_offset: string;
 	top_offset: string;
+	client_id: string;
+	disable_tooltip: string;
 }
 
 const DEFAULT_SETTINGS: ObsidianGrammarlyPluginSettings = {
 	left_offset: '0',
-	top_offset: '0'
+	top_offset: '0',
+	client_id: 'client_SZRuwBMe5opCznxqMQCG3q',
+	disable_tooltip: 'true'
 }
 
 
@@ -88,8 +92,12 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 				}
 
 				var tooltip_observer_element = document.querySelector("body")!;
+				console.log(this.settings);
 
-				tooltip_observer.observe(tooltip_observer_element, {childList: true});
+				if(this.settings.disable_tooltip == "true")
+					{
+					tooltip_observer.observe(tooltip_observer_element, {childList: true});
+					}
 
 			}
 		}
@@ -136,6 +144,26 @@ class MainSettingsTab extends PluginSettingTab {
 						 .setValue(this.plugin.settings.top_offset)
 						 .onChange(async (value) => {
 							 this.plugin.settings.top_offset = value;
+							 await this.plugin.saveSettings();
+						 }));
+		new Setting(containerEl)
+		.setName('Grammarly Client ID')
+		.setDesc('The Grammarly Editor SDK requires a client ID to operate. One is included by default, but you can change it if you like.')
+		.addText(text => text
+						 .setPlaceholder('Client ID')
+						 .setValue(this.plugin.settings.client_id)
+						 .onChange(async (value) => {
+							 this.plugin.settings.client_id = value;
+							 await this.plugin.saveSettings();
+						 }));
+		new Setting(containerEl)
+		.setName('Remove Grammarly tooltip')
+		.setDesc('Set to false to show tooltip.')
+		.addText(text => text
+						 .setPlaceholder('Remove tooltip')
+						 .setValue(this.plugin.settings.disable_tooltip)
+						 .onChange(async (value) => {
+							 this.plugin.settings.disable_tooltip = value;
 							 await this.plugin.saveSettings();
 						 }));
 	}
