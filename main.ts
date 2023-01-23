@@ -15,9 +15,6 @@ import {
 import * as Grammarly from "@grammarly/editor-sdk";
 import { grammarlyPlugin } from "./plugin";
 
-// Remember to rename these classes and interfaces!
-//
-//
 
 export interface ObsidianGrammarlyPluginSettings {
 	left_offset: string;
@@ -29,7 +26,7 @@ export interface ObsidianGrammarlyPluginSettings {
 const DEFAULT_SETTINGS: ObsidianGrammarlyPluginSettings = {
 	left_offset: "0",
 	top_offset: "0",
-	client_id: "DesktopClient_ID",
+	client_id: "client_DNSZ5n1LBKo8CDovJJ85DT",
 	disable_tooltip: "true",
 };
 

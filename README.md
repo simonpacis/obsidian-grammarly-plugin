@@ -9,7 +9,8 @@ It will be submitted to "Community Plugins" at a later time.
 
 ## Installation 
 
-**Do not clone the repo or download it as zip. This is not how this plug-in is installed.**
+**Do not clone the repo or download it as zip.
+This is not how this plug-in is installed.**
 
 Quick starting guide for installing the plugin:
 - Download obsidian-grammarly-plugin.zip from the latest release.
@@ -22,18 +23,27 @@ Quick starting guide for installing the plugin:
 
 There are two ways to use this plugin.
 
-1. Click on the Grammarly logo in the left ribbon.
-2. Open the command palette and run the "Enable Grammarly" command.
+1.
+Click on the Grammarly logo in the left ribbon.
+2.
+Open the command palette and run the "Enable Grammarly" command.
 
 Grammarly will now be enabled for the remainder of the session.
 At the moment you (generally) have to quit Obsidian to get rid of it.
 
+## Logging in
+Thanks to [kpgabriel](https://github.com/kpgabriel) it is possible to connect your Grammarly account so that premium features are available.
+
 ### Offset
-Some themes change the way the Grammarly popover is positioned, and therefore it might be far off from where it is supposed to be. In the settings for the plugin it is possible to offset the popover (left and top) in pixels.
+Some themes change the way the Grammarly popover is positioned, and therefore it might be far off from where it is supposed to be.
+In the settings for the plugin it is possible to offset the popover (left and top) in pixels.
 
-E.g. for the default Obsidian theme I have found a left offset of "320" and a top offset of "100" to be helpful.
+E.g.
+for the default Obsidian theme I have found a left offset of "320" and a top offset of "100" to be helpful.
 
-Please note that the offset doesn't live-change. It is only applied the first time you "Enable Grammarly". You may have to restart Obsidian in between offset changes.
+Please note that the offset doesn't live-change.
+It is only applied the first time you "Enable Grammarly".
+You may have to restart Obsidian in between offset changes.
 
 ## About
 This plugin is pretty simple.
