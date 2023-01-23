@@ -59,7 +59,7 @@ This is more of a proof-of-concept version at this stage.
 Here are the planned features before submission to "Community Plugins" will be made.
 
 ### 1.0.0
-- [ ] Support for logging in to your own Grammarly account (for premium features)
+- [X] Support for logging in to your own Grammarly account (for premium features)
 - [ ] Style customizations
 - [ ] Custom settings
 - [ ] Ability to disable Grammarly
