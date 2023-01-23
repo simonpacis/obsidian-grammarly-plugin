@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2
+kpgabriel developed login functionality.
+
 ## 0.2.1
 Added option to re-enable tooltip and change client-id.
 Future versions will remove tooltip code in favor of changes to the Grammarly Editor SDK.
