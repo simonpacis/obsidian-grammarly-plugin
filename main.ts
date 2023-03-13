@@ -1,18 +1,13 @@
 import { Extension } from "@codemirror/state";
-import { BrowserWindow } from "@electron/remote";
 import {
 	addIcon,
 	App,
-	Editor,
-	MarkdownView,
-	Modal,
 	Notice,
-	ObsidianProtocolHandler,
 	Plugin,
 	PluginSettingTab,
 	Setting,
+	MarkdownView
 } from "obsidian";
-import * as Grammarly from "@grammarly/editor-sdk";
 import { grammarlyPlugin } from "./plugin";
 
 
@@ -63,6 +58,7 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 				this.enableGrammarly();
 			},
 		});
+
 		if (!this.ext) {
 			this.ext = grammarlyPlugin;
 			this.extArray = [this.ext];
@@ -76,49 +72,52 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 
 	enableGrammarly() {
 		new Notice("Grammarly has been enabled.");
-		const view = this?.app?.workspace?.activeLeaf?.view;
-		if (view != null) {
-			const editorView = (view as any).editor.cm;
+		const view = this.app.workspace.getActiveViewOfType(MarkdownView)
 
-			const plugin = editorView.plugin(grammarlyPlugin);
+		if(!view) {
+			new Notice("No active view found.");
+			return;
+		}
 
-			if (plugin) {
-				plugin.initialize(editorView, this.settings);
+		const editorView: CodeMirror.Editor = view.editor.cm;
+		const plugin = editorView.plugin(grammarlyPlugin);
 
-				/* Look for Grammarly-powered tooltip, and if found, remove element. */
-				const tooltip_observer = new MutationObserver(tooltip_callback);
+		if (plugin) {
+			plugin.initialize(editorView, this.settings);
 
-				function tooltip_callback(mutations: MutationRecord[]) {
-					for (var i = 0; i < mutations.length; i++) {
-						var mutation = mutations[i];
-						if (mutation.addedNodes.length > 0) {
-							for (
-								var ii = 0;
-								ii < mutation.addedNodes.length;
-								ii++
+			/* Look for Grammarly-powered tooltip, and if found, remove element. */
+			const tooltip_observer = new MutationObserver(tooltip_callback);
+
+			function tooltip_callback(mutations: MutationRecord[]) {
+				for (var i = 0; i < mutations.length; i++) {
+					var mutation = mutations[i];
+					if (mutation.addedNodes.length > 0) {
+						for (
+							var ii = 0;
+							ii < mutation.addedNodes.length;
+							ii++
+						) {
+							var node = mutation.addedNodes[
+								ii
+							] as HTMLBodyElement;
+							if (
+								node.innerText == "Grammarly-powered editor"
 							) {
-								var node = mutation.addedNodes[
-									ii
-								] as HTMLBodyElement;
-								if (
-									node.innerText == "Grammarly-powered editor"
-								) {
-									node.remove();
-								}
+								node.remove();
 							}
 						}
 					}
 				}
+			}
 
-				const tooltip_observer_element =
-					document.querySelector("body")!;
-				console.log(this.settings);
+			const tooltip_observer_element =
+				document.querySelector("body")!;
+			console.log(this.settings);
 
-				if (this.settings.disable_tooltip == "true") {
-					tooltip_observer.observe(tooltip_observer_element, {
-						childList: true,
-					});
-				}
+			if (this.settings.disable_tooltip == "true") {
+				tooltip_observer.observe(tooltip_observer_element, {
+					childList: true,
+				});
 			}
 		}
 	}
