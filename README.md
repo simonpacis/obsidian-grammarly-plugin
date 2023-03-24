@@ -79,3 +79,9 @@ Here are the planned features before submission to "Community Plugins" will be m
 
 - https://github.com/denisoed/obsidian-orthography
 - https://github.com/Clemens-E/obsidian-languagetool-plugin
+
+## Contributors
+- simonpacis
+- kpgabriel
+- iloveitaly
+- d4n3sh
