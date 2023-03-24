@@ -1,7 +1,7 @@
 {
 	"id": "obsidian-grammarly-plugin",
 	"name": "Grammarly Plugin",
-	"version": "1.0.0",
+	"version": "0.2.3",
 	"minAppVersion": "0.15.0",
 	"description": "Adds support for Grammarly to Obsidian.md.",
 	"author": "Simon Pacis",
