@@ -2,7 +2,7 @@
 
 This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](https://grammarly.com) support directly in your editor.
 
-![Demo](https://user-images.githubusercontent.com/7118482/195243729-44cee9a0-3635-4eda-b012-5af36a5c0f96.gif)
+![Demo](https://user-images.githubusercontent.com/7118482/227655456-41008759-1a48-4e07-9211-a185b9a7b062.gif)
 
 **NOTE**: This plugin is a work in progress.
 It will be submitted to "Community Plugins" at a later time.
