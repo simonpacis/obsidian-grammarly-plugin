@@ -12,7 +12,7 @@ It will be submitted to "Community Plugins" at a later time.
 ### Option 1: BRAT (easiest)
 - Install BRAT from Community Plugins in Obsidian
 - Open Command Palette and run the command "BRAT: Add a beta plugin for testing"
-- Use the following link: "https://github.com/simonpacis/obsidian-grammarly-plugin"
+- Use the following link: https://github.com/simonpacis/obsidian-grammarly-plugin
 - Click "Add Plugin"
 - Go to Community Plugins, refresh, and enable Obsidian Grammarly plugin
 
