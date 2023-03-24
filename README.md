@@ -1,4 +1,4 @@
-# Obsidian Grammarly Plugin 
+# Obsidian Grammarly Plugin
 
 This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](https://grammarly.com) support directly in your editor.
 
@@ -7,7 +7,7 @@ This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](http
 **NOTE**: This plugin is a work in progress.
 It will be submitted to "Community Plugins" at a later time.
 
-## Installation 
+## Installation
 
 **Do not clone the repo or download it as zip. This is not how this plug-in is installed.**
 
@@ -47,9 +47,11 @@ You also get underlines and the typical in-place substitutions that Grammarly pr
 If you're interested in further developing the plugin, you are more than welcome to do so and submit PR's.
 
 Quick-start:
+
 - Clone the repo
 - Run ```npm install```
 - Run ```npm run dev``` to generate main.js.
+- Link the plugin folder `ln -s $PWD ~/YourObsidianVault/.obsidian/plugins/`
 
 The plugin is based on the following unofficial developer docs: [https://marcus.se.net/obsidian-plugin-docs/getting-started/create-your-first-plugin](https://marcus.se.net/obsidian-plugin-docs/getting-started/create-your-first-plugin)
 
@@ -72,3 +74,8 @@ Here are the planned features before submission to "Community Plugins" will be m
 ## Known bugs
 - [ ] Grammarly fails in files with embedded PDF's (see issue [#2](https://github.com/simonpacis/obsidian-grammarly-plugin/issues/2))
 
+
+## Related Projects
+
+- https://github.com/denisoed/obsidian-orthography
+- https://github.com/Clemens-E/obsidian-languagetool-plugin
