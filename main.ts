@@ -101,7 +101,7 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 								ii
 							] as HTMLBodyElement;
 							if (
-								node.innerText == "Grammarly-powered editor"
+								node.innerText == "Grammarly-powered editor" || node.innerText == "Grammarly-powered editor—To review writing suggestions, press ⌘⌃g"
 							) {
 								node.remove();
 							}
