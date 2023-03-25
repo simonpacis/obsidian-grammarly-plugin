@@ -85,7 +85,7 @@ Here are the planned features before submission to "Community Plugins" will be m
 
 
 ## Related Projects
-
+- https://github.com/simonpacis/obsidian-angry-reviewer
 - https://github.com/denisoed/obsidian-orthography
 - https://github.com/Clemens-E/obsidian-languagetool-plugin
 
