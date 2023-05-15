@@ -4,8 +4,10 @@ This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](http
 
 ![Demo](https://user-images.githubusercontent.com/7118482/227655456-41008759-1a48-4e07-9211-a185b9a7b062.gif)
 
-**NOTE**: This plugin is a work in progress.
+**NOTE 1**: This plugin is a work in progress.
 It will be submitted to "Community Plugins" at a later time.
+
+**NOTE 2**: This is essentially just a wrapper for the Grammarly SDK. As such, there are many bugs that will be marked as wontfix. However, do not let this stop you from submitting issues.
 
 ## Installation
 
