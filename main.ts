@@ -48,7 +48,7 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 
 		this.registerObsidianProtocolHandler("grammarly-auth", (res) => {
 			const url = `obsidian://grammarly-auth?code=${res.code}&state=${res.state}`;
-			this.enableGrammarlyLogin(url);
+				this.enableGrammarlyLogin(url);
 		});
 
 		this.addCommand({
@@ -71,8 +71,12 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 	onunload() {}
 
 	enableGrammarly() {
-		new Notice("Grammarly has been enabled.");
 		const view = this.app.workspace.getActiveViewOfType(MarkdownView)
+		if (app.vault.getConfig("vimMode")) {
+			const cm = view.editor.cm.cm
+			window.CodeMirrorAdapter.Vim.handleKey(cm, "i", "mapping")
+		}
+		new Notice("Grammarly has been enabled.");
 
 		if(!view) {
 			new Notice("No active view found.");
@@ -94,8 +98,8 @@ export default class ObsidianGrammarlyPlugin extends Plugin {
 					if (mutation.addedNodes.length > 0) {
 						for (
 							var ii = 0;
-							ii < mutation.addedNodes.length;
-							ii++
+						ii < mutation.addedNodes.length;
+						ii++
 						) {
 							var node = mutation.addedNodes[
 								ii
@@ -164,58 +168,58 @@ class MainSettingsTab extends PluginSettingTab {
 		containerEl.createEl("h2", { text: "Grammarly Plugin Settings" });
 
 		new Setting(containerEl)
-			.setName("Left Popover Offset (in pixels)")
-			.setDesc(
-				"The Grammarly popover is placed incorrectly when using certain themes. If you encoutner this, this setting allows you to offset it to the left it so that it looks right."
-			)
-			.addText((text) =>
-				text
-					.setPlaceholder("Enter offset (in pixels)")
-					.setValue(this.plugin.settings.left_offset)
-					.onChange(async (value) => {
-						this.plugin.settings.left_offset = value;
-						await this.plugin.saveSettings();
-					})
-			);
-		new Setting(containerEl)
-			.setName("Top Popover Offset (in pixels)")
-			.setDesc(
-				"The Grammarly popover is placed incorrectly when using certain themes. If you encoutner this, this setting allows you to offset it from the top so that it looks right."
-			)
-			.addText((text) =>
-				text
-					.setPlaceholder("Enter offset (in pixels)")
-					.setValue(this.plugin.settings.top_offset)
-					.onChange(async (value) => {
-						this.plugin.settings.top_offset = value;
-						await this.plugin.saveSettings();
-					})
-			);
-		new Setting(containerEl)
-			.setName("Grammarly Client ID")
-			.setDesc(
-				"The Grammarly Editor SDK requires a client ID to operate. One is included by default, but you can change it if you like."
-			)
-			.addText((text) =>
-				text
-					.setPlaceholder("Client ID")
-					.setValue(this.plugin.settings.client_id)
-					.onChange(async (value) => {
-						this.plugin.settings.client_id = value;
-						await this.plugin.saveSettings();
-					})
-			);
-		new Setting(containerEl)
-			.setName("Remove Grammarly tooltip")
-			.setDesc("Set to false to show tooltip.")
-			.addText((text) =>
-				text
-					.setPlaceholder("Remove tooltip")
-					.setValue(this.plugin.settings.disable_tooltip)
-					.onChange(async (value) => {
-						this.plugin.settings.disable_tooltip = value;
-						await this.plugin.saveSettings();
-					})
-			);
+		.setName("Left Popover Offset (in pixels)")
+		.setDesc(
+			"The Grammarly popover is placed incorrectly when using certain themes. If you encoutner this, this setting allows you to offset it to the left it so that it looks right."
+		)
+		.addText((text) =>
+						 text
+						 .setPlaceholder("Enter offset (in pixels)")
+						 .setValue(this.plugin.settings.left_offset)
+						 .onChange(async (value) => {
+							 this.plugin.settings.left_offset = value;
+							 await this.plugin.saveSettings();
+						 })
+						);
+						new Setting(containerEl)
+						.setName("Top Popover Offset (in pixels)")
+						.setDesc(
+							"The Grammarly popover is placed incorrectly when using certain themes. If you encoutner this, this setting allows you to offset it from the top so that it looks right."
+						)
+						.addText((text) =>
+										 text
+										 .setPlaceholder("Enter offset (in pixels)")
+										 .setValue(this.plugin.settings.top_offset)
+										 .onChange(async (value) => {
+											 this.plugin.settings.top_offset = value;
+											 await this.plugin.saveSettings();
+										 })
+										);
+										new Setting(containerEl)
+										.setName("Grammarly Client ID")
+										.setDesc(
+											"The Grammarly Editor SDK requires a client ID to operate. One is included by default, but you can change it if you like."
+										)
+										.addText((text) =>
+														 text
+														 .setPlaceholder("Client ID")
+														 .setValue(this.plugin.settings.client_id)
+														 .onChange(async (value) => {
+															 this.plugin.settings.client_id = value;
+															 await this.plugin.saveSettings();
+														 })
+														);
+														new Setting(containerEl)
+														.setName("Remove Grammarly tooltip")
+														.setDesc("Set to false to show tooltip.")
+														.addText((text) =>
+																		 text
+																		 .setPlaceholder("Remove tooltip")
+																		 .setValue(this.plugin.settings.disable_tooltip)
+																		 .onChange(async (value) => {
+																			 this.plugin.settings.disable_tooltip = value;
+																			 await this.plugin.saveSettings();
+																		 })
+																		);
 	}
 }
