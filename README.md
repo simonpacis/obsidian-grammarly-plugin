@@ -1,6 +1,6 @@
 # Obsidian Grammarly Plugin
 
-**This project will no longer be maintained, as Grammarly has chosen to discontinue their SDK. The plugin will cease to function on Jan 10, 2024.**
+**This project will no longer be maintained, as Grammarly has chosen to discontinue their SDK. The plugin will cease to function on Jan 10, 2024. This decision was made exclusively by Grammarly, and there is nothing I can do.**
 
 This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](https://grammarly.com) support directly in your editor.
 
