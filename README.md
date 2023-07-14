@@ -2,6 +2,15 @@
 
 **This project will no longer be maintained, as Grammarly has chosen to discontinue their SDK. The plugin will cease to function on Jan 10, 2024. This decision was made exclusively by Grammarly, and there is nothing I can do.**
 
+## Alternatives
+
+Here's a list of Obsidian plugins that, while not being a drop-in replacement, aim to solve some of the same problems as this plugin.
+
+- https://github.com/simonpacis/obsidian-angry-reviewer
+- https://github.com/denisoed/obsidian-orthography
+- https://github.com/Clemens-E/obsidian-languagetool-plugin
+
+
 This is a plugin for [Obsidian](https://obsidian.md) which adds [Grammarly](https://grammarly.com) support directly in your editor.
 
 ![Demo](https://user-images.githubusercontent.com/7118482/227655456-41008759-1a48-4e07-9211-a185b9a7b062.gif)
